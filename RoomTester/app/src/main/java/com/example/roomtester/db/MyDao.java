@@ -4,6 +4,7 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.RawQuery;
+import androidx.sqlite.db.SupportSQLiteQuery;
 
 import java.util.List;
 
@@ -13,6 +14,6 @@ public interface MyDao {
     void addSchueler(Schueler schueler);
 
     @RawQuery
-    List<Schueler> getSchueler(String s);
+    List<Schueler> getSchueler(SupportSQLiteQuery query);
 
 }

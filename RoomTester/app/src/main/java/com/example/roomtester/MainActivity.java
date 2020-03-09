@@ -3,6 +3,7 @@ package com.example.roomtester;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.ButtonBarLayout;
 import androidx.room.Room;
+import androidx.sqlite.db.SimpleSQLiteQuery;
 
 import android.os.Bundle;
 import android.view.View;
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void request(String q){
         try{
-            List<Schueler> schueler = myDatabase.myDao().getSchueler(q);
+            List<Schueler> schueler = myDatabase.myDao().getSchueler(new SimpleSQLiteQuery(q));
             String o = "";
             for (Schueler s: schueler){
                 o += Integer.toString(s.getId());

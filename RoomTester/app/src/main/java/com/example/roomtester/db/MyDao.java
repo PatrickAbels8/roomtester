@@ -16,4 +16,8 @@ public interface MyDao {
     @RawQuery
     List<Schueler> getSchueler(SupportSQLiteQuery query);
 
+    /*
+    query return type can be livedata for complex types --> "https://developer.android.com/training/data-storage/room/accessing-data#java"
+     */
+
 }
